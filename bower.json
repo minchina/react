@@ -1,0 +1,24 @@
+{
+  "name": "react-gulp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "minchina <minchina91@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.3",
+    "babel": "*",
+    "jquery": "~2.1.4",
+    "marked": "~0.3.5"
+  }
+}
