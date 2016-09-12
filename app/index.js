@@ -18,7 +18,7 @@ class App extends React.Component {
             <div>
                 <h1>Hello, World!, My son's name is {this.state.name}</h1>
                 <h2>{this.state.age}</h2>
-                <MyComponent name="haha"/>
+                <MyComponent/>
                 <ul>
                     {lists.map((result, index) => {
                         return (<li key={index}>{result}</li>)
@@ -43,5 +43,9 @@ App.defaultProps = {
 const MyComponent = (props) => (
     <div><h1>My component name is {props.name}</h1></div>
 );
+
+MyComponent.defaultProps = {
+    name:"xiang"
+}
 
 ReactDOM.render(<App name='chen,xiang'/>, document.getElementById('app'));
