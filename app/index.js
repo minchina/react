@@ -18,7 +18,7 @@ class App extends React.Component {
             <div>
                 <h1>Hello, World!, My son's name is {this.state.name}</h1>
                 <h2>{this.state.age}</h2>
-                <MyComponent />
+                <MyComponent name="haha"/>
                 <ul>
                     {lists.map((result, index) => {
                         return (<li key={index}>{result}</li>)
@@ -30,6 +30,8 @@ class App extends React.Component {
     }
 }
 
+
+
 App.propTypes = {
     name: React.PropTypes.string
 };
@@ -38,8 +40,8 @@ App.defaultProps = {
     name: "erbi"
 };
 
-const MyComponent = () => (
-    <div><h1>My component</h1></div>
+const MyComponent = (props) => (
+    <div><h1>My component name is {props.name}</h1></div>
 );
 
 ReactDOM.render(<App name='chen,xiang'/>, document.getElementById('app'));
