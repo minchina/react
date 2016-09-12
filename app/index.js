@@ -1,19 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const lists = ['JavaScript', 'Java', 'Node', 'Python'];
+
+
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: props.name,
+            age: 21
         };
     }
+
     render() {
         return (
             <div>
-                <h1>Hello, World!</h1>
+                <h1>Hello, World!, My son's name is {this.state.name}</h1>
+                <h2>{this.state.age}</h2>
+                <MyComponent />
+                <ul>
+                    {lists.map((result, index) => {
+                        return (<li key={index}>{result}</li>)
+                    })}
+                </ul>
+
             </div>
         );
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+App.propTypes = {
+    name: React.PropTypes.string
+};
+
+App.defaultProps = {
+    name: "erbi"
+};
+
+const MyComponent = () => (
+    <div><h1>My component</h1></div>
+);
+
+ReactDOM.render(<App name='chen,xiang'/>, document.getElementById('app'));
